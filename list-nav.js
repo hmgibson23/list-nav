@@ -1,4 +1,4 @@
-(function(window, undefined) {
+var ListNav = (function() {
     var LN = function(ul) {
         this.ul = ul;
     };
@@ -15,7 +15,7 @@
 
             var links = document.getElementById(navName).getElementsByTagName('a');
 
-            var ul = this.ul; //alias for simplicity
+            var ul = this.ul; //alias for simplicity - I got bored of typing this.id
 
             for (var i = 0, ii = links.length; i < ii; i++) {
                 links[i].onclick = function(event) {
@@ -168,14 +168,10 @@
         //end prototype
     };
 
-
-
-    var ListNav = {
+    return {
         init: function(ul) {
             return new LN(ul);
         }
-    };
+    }
 
-    window.ListNav = ListNav;
-
-})(window, undefined);
+})(ListNav);
